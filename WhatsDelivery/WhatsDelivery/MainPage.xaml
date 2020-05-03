@@ -2,15 +2,78 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             mc:Ignorable="d" BackgroundColor="#86C745"
              x:Class="WhatsDelivery.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome t555tfffff4vo f.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+
+    <StackLayout Margin="40,100,40,0" BackgroundColor="Transparent">
+        <Label Text="BEM VINDO(A)" FontSize="30" TextColor="White" HorizontalTextAlignment="Center" />
+        <pancake:PancakeView BackgroundColor="White"
+                     CornerRadius="40,0,0,40"
+                     IsClippedToBounds="true"
+                     HorizontalOptions="FillAndExpand"
+                     HeightRequest="250">
+
+            <StackLayout Margin="5,5,5,5" >
+                <Image Source="whatslogo.bmp" Margin="0,0,0,0"                       
+                      HeightRequest="130" Aspect="AspectFit"
+                      HorizontalOptions="CenterAndExpand"/>
+                
+                <Label x:Name="lbCidade"
+                   Text="Qual sua cidade?" 
+                   Margin="5,5,5,10"
+                   FontSize="20" FontAttributes="Bold"
+                   TextColor="#111111"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+
+                <Entry x:Name="pesquisa" IsEnabled="False"
+                       Visual="Material"  
+                       Placeholder="Aguarde, pesquisando local..." />
+                
+            </StackLayout>
+           
+
+                    <!--<Label x:Name="lbCidade"
+                   Text="Qual sua cidade?" 
+                   Margin="5,5,5,10"
+                   FontSize="20" FontAttributes="Bold"
+                   TextColor="#111111"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+
+                    <Entry x:Name="pesquisa" IsEnabled="False"
+                       Visual="Material"  
+                       Placeholder="Aguarde, pesquisando local..." />-->
+
+                    <!--<ActivityIndicator 
+                IsRunning="true" x:Name="activity_indicator"
+                AbsoluteLayout.LayoutBounds="0.5,0,100,100" 
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Color="#3CB371" />-->
+
+
+
+                    <!--<Button x:Name="btnPinhao" 
+                            Text="ENTRAR" FontAttributes="Bold"
+                            TextColor="White"
+                            BorderColor="#3CB371"
+                            BorderRadius="10" 
+                            WidthRequest="200"
+                            HeightRequest="40"
+                            Margin="15,0,5,0" 
+                            IsVisible="False"
+                            FontSize="15" Visual="Material"
+                            Clicked="BtnPinhao_Clicked"
+                            BackgroundColor="#3CB371"
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center">
+                    </Button>-->
+
+        </pancake:PancakeView>
+        <!--<Label Text="Suporte" HorizontalTextAlignment="Center" />-->
     </StackLayout>
 
 </ContentPage>
