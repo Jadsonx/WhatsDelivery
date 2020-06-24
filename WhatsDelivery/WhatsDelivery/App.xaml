@@ -6,6 +6,11 @@
              mc:Ignorable="d"
              x:Class="WhatsDelivery.App">
     <Application.Resources>
-
+        <OnPlatform x:TypeArguments="x:String" x:Key="Bold">
+            <On Platform="Android" Value="GothamBold.ttf#GothamBold" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="UltraItalic">
+            <On Platform="Android" Value="Gotham-UltraItalic.otf#Gotham-UltraItalic" />
+        </OnPlatform>
     </Application.Resources>
 </Application>

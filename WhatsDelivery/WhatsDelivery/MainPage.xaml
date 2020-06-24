@@ -7,73 +7,49 @@
              mc:Ignorable="d" BackgroundColor="#86C745"
              x:Class="WhatsDelivery.MainPage">
 
+    <StackLayout Margin="40,100,40,0">
 
-    <StackLayout Margin="40,100,40,0" BackgroundColor="Transparent">
-        <Label Text="BEM VINDO(A)" FontSize="30" TextColor="White" HorizontalTextAlignment="Center" />
-        <pancake:PancakeView BackgroundColor="White"
-                     CornerRadius="40,0,0,40"
-                     IsClippedToBounds="true"
-                     HorizontalOptions="FillAndExpand"
-                     HeightRequest="250">
+        <Label Text="BEM VINDO(A)" FontFamily="{StaticResource UltraItalic}" FontSize="30" TextColor="White" HorizontalTextAlignment="Center" Margin="0, 0, 0, 80"/>
 
-            <StackLayout Margin="5,5,5,5" >
-                <Image Source="whatslogo.bmp" Margin="0,0,0,0"                       
-                      HeightRequest="130" Aspect="AspectFit"
-                      HorizontalOptions="CenterAndExpand"/>
+        <RelativeLayout Margin="0, 50, 0, 0">
+
+            <pancake:PancakeView BackgroundColor="White"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                                     CornerRadius="30,0,0,30"
+                                     IsClippedToBounds="true"
+                                     HorizontalOptions="CenterAndExpand"
+                                     HeightRequest="250"
+                                     x:Name="quadro">
                 
-                <Label x:Name="lbCidade"
-                   Text="Qual sua cidade?" 
-                   Margin="5,5,5,10"
-                   FontSize="20" FontAttributes="Bold"
-                   TextColor="#111111"
-                   HorizontalOptions="Center"
-                   VerticalOptions="CenterAndExpand" />
+                <StackLayout Margin="10, 10, 10, 10" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
 
-                <Entry x:Name="pesquisa" IsEnabled="False"
-                       Visual="Material"  
-                       Placeholder="Aguarde, pesquisando local..." />
-                
-            </StackLayout>
-           
-
-                    <!--<Label x:Name="lbCidade"
-                   Text="Qual sua cidade?" 
-                   Margin="5,5,5,10"
-                   FontSize="20" FontAttributes="Bold"
-                   TextColor="#111111"
-                   HorizontalOptions="Center"
-                   VerticalOptions="CenterAndExpand" />
+                    <Label x:Name="lbCidade"
+                           Text="Qual sua cidade?"                    
+                           FontSize="20"
+                           FontFamily="{StaticResource Bold}"
+                           TextColor="#111111"
+                           HorizontalOptions="Start"/>
 
                     <Entry x:Name="pesquisa" IsEnabled="False"
-                       Visual="Material"  
-                       Placeholder="Aguarde, pesquisando local..." />-->
+                           Visual="Material"
+                           FontFamily="{StaticResource Bold}"
+                           Margin="0,0,0,15"
+                           Placeholder="Aguarde, pesquisando local..." />
 
-                    <!--<ActivityIndicator 
-                IsRunning="true" x:Name="activity_indicator"
-                AbsoluteLayout.LayoutBounds="0.5,0,100,100" 
-                AbsoluteLayout.LayoutFlags="PositionProportional"
-                Color="#3CB371" />-->
+                    <Button Text="ENTRAR" CornerRadius="5" FontFamily="{StaticResource UltraItalic}" FontSize="Large" HorizontalOptions="Center" BackgroundColor="#86C745" TextColor="White"/>
+                </StackLayout>
 
+            </pancake:PancakeView>
 
+            <Image Margin="0, 15, 0, 0" Source="whatslogoInicio.png"                      
+                      Aspect="AspectFit"                      
+                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=quadro, Property=X, Factor=1, Constant=40}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=quadro, Property=Y, Factor=1, Constant=-120}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=quadro, Property=Width, Factor=0.7}"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=quadro, Property=Height, Factor=0.7}"/>
+        </RelativeLayout>
 
-                    <!--<Button x:Name="btnPinhao" 
-                            Text="ENTRAR" FontAttributes="Bold"
-                            TextColor="White"
-                            BorderColor="#3CB371"
-                            BorderRadius="10" 
-                            WidthRequest="200"
-                            HeightRequest="40"
-                            Margin="15,0,5,0" 
-                            IsVisible="False"
-                            FontSize="15" Visual="Material"
-                            Clicked="BtnPinhao_Clicked"
-                            BackgroundColor="#3CB371"
-                            HorizontalOptions="Center" 
-                            VerticalOptions="Center">
-                    </Button>-->
-
-        </pancake:PancakeView>
-        <!--<Label Text="Suporte" HorizontalTextAlignment="Center" />-->
     </StackLayout>
 
 </ContentPage>
